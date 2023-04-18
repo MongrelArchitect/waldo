@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component matches snapshot 1`] = `
+<div>
+  <div>
+    <header>
+      <nav>
+        <a
+          aria-current="page"
+          class="active"
+          href="/"
+        >
+          Home
+        </a>
+        <a
+          class=""
+          href="/play"
+        >
+          Play
+        </a>
+        <a
+          class=""
+          href="/scores"
+        >
+          Scoreboard
+        </a>
+      </nav>
+      <span />
+      <span
+        data-testid="characters"
+      >
+        <img
+          alt="beastie"
+          class="not-found"
+          src="beastie.jpg"
+        />
+        <img
+          alt="creeper"
+          class="not-found"
+          src="creeper.jpg"
+        />
+        <img
+          alt="super star"
+          class="not-found"
+          src="super-star.jpg"
+        />
+      </span>
+    </header>
+  </div>
+</div>
+`;
