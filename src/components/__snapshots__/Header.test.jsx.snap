@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component matches snapshot 1`] = `
+<div>
+  <header>
+    <nav>
+      <a
+        aria-current="page"
+        class="active"
+        href="/"
+      >
+        Home
+      </a>
+      <a
+        class=""
+        href="/play"
+      >
+        Play
+      </a>
+      <a
+        class=""
+        href="/scores"
+      >
+        Scoreboard
+      </a>
+    </nav>
+    <span />
+    <span
+      data-testid="characters"
+    >
+      <img
+        alt="char one"
+        class="not-found"
+        src="#"
+      />
+      <img
+        alt="char two"
+        class="not-found"
+        src="##"
+      />
+      <img
+        alt="char three"
+        class="found"
+        src="###"
+      />
+    </span>
+  </header>
+</div>
+`;
