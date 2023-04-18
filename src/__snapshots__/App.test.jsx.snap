@@ -2,7 +2,9 @@
 
 exports[`App component matches snapshot 1`] = `
 <div>
-  <div>
+  <div
+    class="container"
+  >
     <header>
       <nav>
         <a
@@ -46,6 +48,16 @@ exports[`App component matches snapshot 1`] = `
         />
       </span>
     </header>
+    <div
+      class="game"
+      data-testid="game"
+    >
+      <img
+        alt="Wimmelbild"
+        class="wimmel"
+        src="wimmel.jpg"
+      />
+    </div>
   </div>
 </div>
 `;

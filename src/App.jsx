@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
+import Game from './components/Game';
 import beastie from './images/beastie.jpg';
 import creeper from './images/creeper.jpg';
 import superStar from './images/super-star.jpg';
@@ -24,8 +25,9 @@ export default function App() {
   ]);
 
   return (
-    <div>
+    <div className="container">
       <Header characters={characters} setCharacters={setCharacters} />
+      <Game />
     </div>
   );
 }

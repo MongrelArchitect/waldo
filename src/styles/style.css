@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #aaa;
+}
+
+header {
+  border: 2px solid cyan;
+  width: 100%;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 200px 1fr;
+  min-height: 100vh;
+}
+
+.game {
+  border: 2px solid magenta;
+}
+
+.wimmel {
+  max-width: 100%;
+  min-width: 800px;
+}
