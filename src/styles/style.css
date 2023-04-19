@@ -31,11 +31,11 @@ header {
 }
 
 .popup.hidden {
-  display: hidden;
+  visibility: hidden;
 }
 
 .popup.visible {
-  display: visible;
+  visibility: visible;
 }
 
 .popup img {

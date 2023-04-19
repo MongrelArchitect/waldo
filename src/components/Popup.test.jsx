@@ -10,24 +10,26 @@ describe('Popup component', () => {
     { name: 'char three', img: '###', found: true },
   ];
 
+  const coords = { x: 5, y: 10 };
+
   it('exists', () => {
-    render(<Popup characters={chars} />);
+    render(<Popup characters={chars} coords={coords} />);
     expect(screen.getByTestId('popup')).toBeTruthy();
   });
 
   it('displays characters based on "found" status', () => {
-    render(<Popup characters={chars} />);
+    render(<Popup characters={chars} coords={coords} />);
     expect(screen.getAllByText(/[a-z]/i).length).toBe(2);
   });
 
   it('is hidden when "visible" prop is false', () => {
-    render(<Popup characters={chars} visible={false} />);
+    render(<Popup characters={chars} coords={coords} visible={false} />);
     expect(screen.getByTestId('popup')).toHaveClass('popup hidden');
   });
 
   it('is shown when "visible" prop is true', () => {
     // eslint-disable-next-line
-    render(<Popup characters={chars} visible={true} />);
+    render(<Popup characters={chars} coords={coords} visible={true} />);
     expect(screen.getByTestId('popup')).toHaveClass('popup visible');
   });
 });

@@ -55,6 +55,7 @@ exports[`App component matches snapshot 1`] = `
       <div
         class="popup hidden"
         data-testid="popup"
+        style="left: 0px; top: 0px;"
       >
         <span>
           <img
