@@ -53,6 +53,7 @@ exports[`App component matches snapshot 1`] = `
       data-testid="game"
     >
       <div
+        class="popup hidden"
         data-testid="popup"
       >
         <span>

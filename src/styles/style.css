@@ -19,6 +19,33 @@ header {
 
 .game {
   border: 2px solid magenta;
+  position: relative;
+}
+
+.popup {
+  background: rgba(24, 24, 24, 0.9);
+  border: 2px solid yellow;
+  color: #ffe;
+  position: absolute;
+  width: 144px;
+}
+
+.popup.hidden {
+  display: hidden;
+}
+
+.popup.visible {
+  display: visible;
+}
+
+.popup img {
+  height: 40px;
+}
+
+.popup span {
+  align-items: center;
+  border: 2px solid red;
+  display: flex;
 }
 
 .wimmel {

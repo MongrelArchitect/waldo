@@ -1,8 +1,11 @@
 import React from 'react';
 
-export default function Popup({ characters }) {
+export default function Popup({ characters, visible }) {
   return (
-    <div data-testid="popup">
+    <div
+      data-testid="popup"
+      className={visible ? 'popup visible' : 'popup hidden'}
+    >
       {characters.map((character) => {
         if (character.found) {
           return null;
