@@ -52,6 +52,31 @@ exports[`App component matches snapshot 1`] = `
       class="game"
       data-testid="game"
     >
+      <div
+        data-testid="popup"
+      >
+        <span>
+          <img
+            alt="beastie"
+            src="beastie.jpg"
+          />
+          beastie
+        </span>
+        <span>
+          <img
+            alt="creeper"
+            src="creeper.jpg"
+          />
+          creeper
+        </span>
+        <span>
+          <img
+            alt="super star"
+            src="super-star.jpg"
+          />
+          super star
+        </span>
+      </div>
       <img
         alt="Wimmelbild"
         class="wimmel"

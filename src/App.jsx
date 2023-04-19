@@ -27,7 +27,7 @@ export default function App() {
   return (
     <div className="container">
       <Header characters={characters} setCharacters={setCharacters} />
-      <Game />
+      <Game characters={characters} />
     </div>
   );
 }
