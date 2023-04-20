@@ -85,6 +85,35 @@ exports[`App component matches snapshot 1`] = `
         src="wimmel.jpg"
       />
     </div>
+    <footer>
+      <span>
+        Designed by
+        <a
+          href="http://www.seanericthomas.com"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Sean Eric Thomas
+        </a>
+      </span>
+      <span>
+        <a
+          href="https://commons.wikimedia.org/wiki/File:31c3-Wimmelbild.jpg"
+          rel="noreferrer"
+          target="_blank"
+        >
+          "Wimmelbild" art by Caro Wedekind
+        </a>
+        , licensed
+        <a
+          href="https://creativecommons.org/licenses/by/3.0/deed.en"
+          rel="noreferrer"
+          target="_blank"
+        >
+          CC BY 3.0
+        </a>
+      </span>
+    </footer>
   </div>
 </div>
 `;
