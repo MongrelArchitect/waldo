@@ -25,9 +25,16 @@ export default function App() {
     },
   ]);
 
+  const [time, setTime] = useState('00:00:00');
+
   return (
     <div className="container">
-      <Header characters={characters} setCharacters={setCharacters} />
+      <Header
+        characters={characters}
+        setCharacters={setCharacters}
+        time={time}
+        setTime={setTime}
+      />
       <Game characters={characters} />
       <Footer />
     </div>

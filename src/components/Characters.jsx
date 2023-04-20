@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Characters({ characters }) {
   return (
-    <span data-testid="characters">
+    <span data-testid="characters" className="characters">
       {characters.map((character) => (
         <img
           src={character.img}

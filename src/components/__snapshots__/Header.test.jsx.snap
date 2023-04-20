@@ -24,8 +24,11 @@ exports[`Header component matches snapshot 1`] = `
         Scoreboard
       </a>
     </nav>
-    <span />
     <span
+      class="timer"
+    />
+    <span
+      class="characters"
       data-testid="characters"
     >
       <img
