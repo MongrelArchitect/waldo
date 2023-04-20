@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Popup from './Popup';
-import getCoords from '../helpers/Game';
+// eslint-disable-next-line
+import getCoords, { keepInBounds } from '../helpers/Game';
 import wimmel from '../images/wimmel.jpg';
 
 export default function Game({ characters }) {
@@ -10,10 +11,10 @@ export default function Game({ characters }) {
   const handleClick = (event) => {
     setPopupVisible(!popupVisible);
     setPopupCoords({
-      x: event.nativeEvent.offsetX,
-      y: event.nativeEvent.offsetY,
+      x: keepInBounds(event).x,
+      y: keepInBounds(event).y,
     });
-    console.log(getCoords(event));
+    keepInBounds(event);
   };
 
   return (

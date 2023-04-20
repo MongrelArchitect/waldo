@@ -32,4 +32,13 @@ describe('Popup component', () => {
     render(<Popup characters={chars} coords={coords} visible={true} />);
     expect(screen.getByTestId('popup')).toHaveClass('popup visible');
   });
+
+  it('changes position based on "coords" prop', () => {
+    // eslint-disable-next-line
+    render(<Popup characters={chars} coords={coords} visible={true} />);
+    expect(screen.getByTestId('popup')).toHaveAttribute(
+      'style',
+      'left: 5px; top: 10px;',
+    );
+  });
 });

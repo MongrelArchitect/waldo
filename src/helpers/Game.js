@@ -9,3 +9,28 @@ export default function getCoords(event) {
 
   return [xCoord, yCoord];
 }
+
+export function keepInBounds(event) {
+  const popup = document.querySelector('.popup');
+  const popupWidth = popup.offsetWidth;
+  const popupHeight = popup.offsetHeight;
+
+  const imageWidth = event.target.scrollWidth;
+  const imageHeight = event.target.scrollHeight;
+
+  let top = event.nativeEvent.offsetY;
+  let left = event.nativeEvent.offsetX;
+
+  if ((top + popupHeight) > imageHeight) {
+    top -= (top + popupHeight) - imageHeight;
+  }
+
+  if ((left + popupWidth) > imageWidth) {
+    left -= (left + popupWidth) - imageWidth;
+  }
+
+  return {
+    x: left,
+    y: top,
+  };
+}
