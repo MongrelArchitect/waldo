@@ -5,6 +5,7 @@ export default function Footer() {
     <footer>
       <span>
         Designed by
+        {' '}
         <a
           target="_blank"
           href="http://www.seanericthomas.com"
@@ -23,6 +24,7 @@ export default function Footer() {
           &quot;Wimmelbild&quot; art by Caro Wedekind
         </a>
         , licensed
+        {' '}
         <a
           target="_blank"
           href="https://creativecommons.org/licenses/by/3.0/deed.en"
