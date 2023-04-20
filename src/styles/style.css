@@ -10,7 +10,7 @@
 }
 
 body {
-  background: #aaa;
+  background: #fff9de;
   font-family: "Deja Vu Sans", sans-serif;
 }
 
@@ -25,7 +25,6 @@ header {
 
 header {
   align-items: center;
-  border: 2px solid cyan;
   display: flex;
   justify-content: space-between;
   padding: 8px;
@@ -64,12 +63,15 @@ nav a.active {
 
 .container {
   display: grid;
-  grid-template-rows: 100px 1fr 80px;
+  grid-template-rows: 80px 1fr 80px;
   min-height: 100vh;
 }
 
 .game {
-  border: 2px solid magenta;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex: 0;
   position: relative;
 }
 
@@ -106,6 +108,7 @@ nav a.active {
 }
 
 .wimmel {
-  max-width: 100%;
+  width: 100%;
+  height: auto;
   min-width: 800px;
 }
