@@ -66,9 +66,13 @@ nav a.active {
 }
 
 .characters > img {
-  border: 4px solid #333;
+  border: 4px solid #8f41ab;
   border-radius: 50%;
   height: 56px;
+}
+
+.characters > img.found {
+  filter: grayscale(1);
 }
 
 .container {
