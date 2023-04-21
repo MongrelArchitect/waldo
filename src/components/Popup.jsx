@@ -4,9 +4,10 @@ import db from '../helpers/firebase';
 
 export default function Popup({
   characters,
-  // eslint-disable-next-line
   checkCoords,
   coords,
+  foundCharacter,
+  setPopupVisible,
   visible,
 }) {
   // Place the popup window based on mouse cursor
@@ -37,9 +38,11 @@ export default function Popup({
           console.log('found \'em!');
           // XXX TODO
           // now what?
+          foundCharacter(character);
         }
       }
     });
+    setPopupVisible();
   };
 
   return (

@@ -3,7 +3,7 @@ import Popup from './Popup';
 import getCoords, { keepInBounds } from '../helpers/Game';
 import wimmel from '../images/wimmel.jpg';
 
-export default function Game({ characters }) {
+export default function Game({ characters, foundCharacter }) {
   const [popupVisible, setPopupVisible] = useState(false);
   const [popupCoords, setPopupCoords] = useState({ x: 0, y: 0 });
   const [checkCoords, setCheckCoords] = useState({ x: 0, y: 0 });
@@ -28,9 +28,11 @@ export default function Game({ characters }) {
     <div data-testid="game" className="game">
       <Popup
         characters={characters}
-        visible={popupVisible}
-        coords={popupCoords}
         checkCoords={checkCoords}
+        coords={popupCoords}
+        foundCharacter={foundCharacter}
+        setPopupVisible={setPopupVisible}
+        visible={popupVisible}
       />
       {/* eslint-disable-next-line */}
       <img

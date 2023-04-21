@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Header from './components/Header';
 import Game from './components/Game';
 import Footer from './components/Footer';
+import getCopy from './helpers/app';
 import beastie from './images/beastie.jpg';
 import creeper from './images/creeper.jpg';
 import superStar from './images/super-star.jpg';
@@ -25,17 +26,27 @@ export default function App() {
     },
   ]);
 
+  const foundCharacter = (characterName) => {
+    const copy = getCopy(characters);
+    copy.forEach((character) => {
+      if (characterName === character.name) {
+        // eslint-disable-next-line
+        character.found = true;
+      }
+    });
+    setCharacters(copy);
+  };
+
   const [time, setTime] = useState('00:00:00');
 
   return (
     <div className="container">
       <Header
         characters={characters}
-        setCharacters={setCharacters}
         time={time}
         setTime={setTime}
       />
-      <Game characters={characters} />
+      <Game characters={characters} foundCharacter={foundCharacter} />
       <Footer />
     </div>
   );
