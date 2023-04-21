@@ -93,6 +93,7 @@ exports[`App component matches snapshot 1`] = `
     <footer>
       <span>
         Designed by
+         
         <a
           href="http://www.seanericthomas.com"
           rel="noreferrer"
@@ -110,8 +111,9 @@ exports[`App component matches snapshot 1`] = `
           "Wimmelbild" art by Caro Wedekind
         </a>
         , licensed
+         
         <a
-          href="https://creativecommons.org/licenses/by/3.0/deed.en"
+          href="https://creativecommons.org/licenses/by/3.0/legalcode"
           rel="noreferrer"
           target="_blank"
         >

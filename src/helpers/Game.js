@@ -8,7 +8,7 @@ export default function getCoords(event) {
   const oy = event.nativeEvent.offsetY;
   const yCoord = Math.floor(1775 / (sh / oy));
 
-  return [xCoord, yCoord];
+  return { x: xCoord, y: yCoord };
 }
 
 export function keepInBounds(event) {
@@ -26,11 +26,11 @@ export function keepInBounds(event) {
   let left = event.nativeEvent.offsetX;
 
   // Keep it in bounds
-  if ((top + popupHeight) > imageHeight) {
-    top -= (top + popupHeight) - imageHeight;
+  if (top + popupHeight > imageHeight) {
+    top -= top + popupHeight - imageHeight;
   }
-  if ((left + popupWidth) > imageWidth) {
-    left -= (left + popupWidth) - imageWidth;
+  if (left + popupWidth > imageWidth) {
+    left -= left + popupWidth - imageWidth;
   }
 
   return {

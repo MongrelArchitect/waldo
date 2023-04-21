@@ -1,6 +1,8 @@
 import React from 'react';
 
-export default function Popup({ characters, coords, visible }) {
+export default function Popup({
+  characters, checkCoords, coords, visible,
+}) {
   const style = {
     left: coords.x,
     top: coords.y,

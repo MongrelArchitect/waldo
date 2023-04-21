@@ -1,20 +1,27 @@
 import React, { useState } from 'react';
 import Popup from './Popup';
-// eslint-disable-next-line
 import getCoords, { keepInBounds } from '../helpers/Game';
 import wimmel from '../images/wimmel.jpg';
 
 export default function Game({ characters }) {
   const [popupVisible, setPopupVisible] = useState(false);
   const [popupCoords, setPopupCoords] = useState({ x: 0, y: 0 });
+  const [checkCoords, setCheckCoords] = useState({ x: 0, y: 0 });
 
   const handleClick = (event) => {
+    // Show the popup and keep it in bounds
     setPopupVisible(!popupVisible);
     setPopupCoords({
       x: keepInBounds(event).x,
       y: keepInBounds(event).y,
     });
     keepInBounds(event);
+
+    // Keep track of coordinates to check for character
+    setCheckCoords({
+      x: getCoords(event).x,
+      y: getCoords(event).y,
+    });
   };
 
   return (
@@ -23,6 +30,7 @@ export default function Game({ characters }) {
         characters={characters}
         visible={popupVisible}
         coords={popupCoords}
+        checkCoords={checkCoords}
       />
       {/* eslint-disable-next-line */}
       <img

@@ -31,7 +31,7 @@ describe('Footer component', () => {
     expect(screen.getByText('CC BY 3.0'))
       .toHaveAttribute(
         'href',
-        'https://creativecommons.org/licenses/by/3.0/deed.en',
+        'https://creativecommons.org/licenses/by/3.0/legalcode',
       );
   });
 });

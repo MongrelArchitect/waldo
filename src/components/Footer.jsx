@@ -27,7 +27,7 @@ export default function Footer() {
         {' '}
         <a
           target="_blank"
-          href="https://creativecommons.org/licenses/by/3.0/deed.en"
+          href="https://creativecommons.org/licenses/by/3.0/legalcode"
           rel="noreferrer"
         >
           CC BY 3.0
