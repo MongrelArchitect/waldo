@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
+import Home from './components/Home';
 import Game from './components/Game';
 import Footer from './components/Footer';
 import getCopy from './helpers/app';
@@ -41,12 +43,16 @@ export default function App() {
 
   return (
     <div className="container">
-      <Header
-        characters={characters}
-        time={time}
-        setTime={setTime}
-      />
-      <Game characters={characters} foundCharacter={foundCharacter} />
+      <Header characters={characters} time={time} setTime={setTime} />
+      <Routes>
+        <Route path="/" element={<Home characters={characters} />} />
+        <Route
+          path="/play"
+          element={
+            <Game characters={characters} foundCharacter={foundCharacter} />
+          }
+        />
+      </Routes>
       <Footer />
     </div>
   );

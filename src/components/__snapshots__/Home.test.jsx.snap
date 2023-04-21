@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home component matches snapshot 1`] = `
+<div>
+  <div>
+    <h1>
+      Find 'Em
+    </h1>
+    <div
+      class="instructions"
+    >
+      <span>
+        How to play:
+      </span>
+      <span>
+        Your goal is to find several characters hidden within a chaotic scene, just like the classic puzzle book series
+        <a
+          href="https://en.wikipedia.org/wiki/Where%27s_Wally%3F"
+          rel="noreferrer"
+          target="_blank"
+        >
+          "Where's Waldo."
+        </a>
+         
+        Click on the image when you've found one of the characters, and select them from the dropdown to confirm. Try to get the best time possible, and compare your score to others on the scoreboard. Will you be the fastest? Let's go!
+      </span>
+      <span
+        class="characters"
+        data-testid="characters"
+      >
+        <img
+          alt="char one"
+          class="not-found"
+          src="#"
+        />
+        <img
+          alt="char two"
+          class="not-found"
+          src="##"
+        />
+        <img
+          alt="char three"
+          class="found"
+          src="###"
+        />
+      </span>
+      <a
+        class=""
+        href="/play"
+      >
+        Play!
+      </a>
+    </div>
+  </div>
+</div>
+`;

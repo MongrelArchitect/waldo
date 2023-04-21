@@ -53,48 +53,55 @@ exports[`App component matches snapshot 1`] = `
         />
       </span>
     </header>
-    <div
-      class="game"
-      data-testid="game"
-    >
+    <div>
+      <h1>
+        Find 'Em
+      </h1>
       <div
-        class="popup hidden"
-        data-testid="popup"
-        style="left: 0px; top: 0px;"
+        class="instructions"
       >
+        <span>
+          How to play:
+        </span>
+        <span>
+          Your goal is to find several characters hidden within a chaotic scene, just like the classic puzzle book series
+          <a
+            href="https://en.wikipedia.org/wiki/Where%27s_Wally%3F"
+            rel="noreferrer"
+            target="_blank"
+          >
+            "Where's Waldo."
+          </a>
+           
+          Click on the image when you've found one of the characters, and select them from the dropdown to confirm. Try to get the best time possible, and compare your score to others on the scoreboard. Will you be the fastest? Let's go!
+        </span>
         <span
-          data-character="beastie"
+          class="characters"
+          data-testid="characters"
         >
           <img
             alt="beastie"
+            class="not-found"
             src="beastie.jpg"
           />
-          beastie
-        </span>
-        <span
-          data-character="creeper"
-        >
           <img
             alt="creeper"
+            class="not-found"
             src="creeper.jpg"
           />
-          creeper
-        </span>
-        <span
-          data-character="super star"
-        >
           <img
             alt="super star"
+            class="not-found"
             src="super-star.jpg"
           />
-          super star
         </span>
+        <a
+          class=""
+          href="/play"
+        >
+          Play!
+        </a>
       </div>
-      <img
-        alt="Wimmelbild"
-        class="wimmel"
-        src="wimmel.jpg"
-      />
     </div>
     <footer>
       <span>
