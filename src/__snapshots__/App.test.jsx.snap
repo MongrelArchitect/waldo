@@ -53,18 +53,21 @@ exports[`App component matches snapshot 1`] = `
         />
       </span>
     </header>
-    <div>
+    <div
+      class="home"
+    >
       <h1>
         Find 'Em
       </h1>
       <div
         class="instructions"
       >
-        <span>
+        <h2>
           How to play:
-        </span>
+        </h2>
         <span>
           Your goal is to find several characters hidden within a chaotic scene, just like the classic puzzle book series
+           
           <a
             href="https://en.wikipedia.org/wiki/Where%27s_Wally%3F"
             rel="noreferrer"
@@ -75,33 +78,46 @@ exports[`App component matches snapshot 1`] = `
            
           Click on the image when you've found one of the characters, and select them from the dropdown to confirm. Try to get the best time possible, and compare your score to others on the scoreboard. Will you be the fastest? Let's go!
         </span>
-        <span
-          class="characters"
-          data-testid="characters"
-        >
-          <img
-            alt="beastie"
-            class="not-found"
-            src="beastie.jpg"
-          />
-          <img
-            alt="creeper"
-            class="not-found"
-            src="creeper.jpg"
-          />
-          <img
-            alt="super star"
-            class="not-found"
-            src="super-star.jpg"
-          />
-        </span>
-        <a
-          class=""
-          href="/play"
-        >
-          Play!
-        </a>
       </div>
+      <span
+        class="characters"
+        data-testid="characters"
+      >
+        <img
+          alt="beastie"
+          class="not-found"
+          src="beastie.jpg"
+        />
+        <img
+          alt="creeper"
+          class="not-found"
+          src="creeper.jpg"
+        />
+        <img
+          alt="super star"
+          class="not-found"
+          src="super-star.jpg"
+        />
+      </span>
+      <div
+        class="char-names"
+      >
+        <span>
+          beastie
+        </span>
+        <span>
+          creeper
+        </span>
+        <span>
+          super star
+        </span>
+      </div>
+      <a
+        class="play-link"
+        href="/play"
+      >
+        START
+      </a>
     </div>
     <footer>
       <span>
