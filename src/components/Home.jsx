@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import Characters from './Characters';
 
-export default function Home({ characters }) {
+export default function Home({ characters, setTime, timer }) {
+  useEffect(() => {
+    setTime(0);
+    clearInterval(timer);
+  }, []);
+
   return (
     <div className="home">
       <h1>Find &apos;Em</h1>

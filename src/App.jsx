@@ -28,6 +28,10 @@ export default function App() {
     },
   ]);
 
+  const [time, setTime] = useState(0);
+
+  const [timer, setTimer] = useState(undefined);
+
   const foundCharacter = (characterName) => {
     const copy = getCopy(characters);
     copy.forEach((character) => {
@@ -39,13 +43,16 @@ export default function App() {
     setCharacters(copy);
   };
 
-  const [time, setTime] = useState(0);
-
   return (
     <div className="container">
       <Header characters={characters} time={time} setTime={setTime} />
       <Routes>
-        <Route path="/" element={<Home characters={characters} />} />
+        <Route
+          path="/"
+          element={
+            <Home characters={characters} setTime={setTime} timer={timer} />
+          }
+        />
         <Route
           path="/play"
           element={(
@@ -53,6 +60,7 @@ export default function App() {
               characters={characters}
               foundCharacter={foundCharacter}
               setTime={setTime}
+              setTimer={setTimer}
             />
           )}
         />

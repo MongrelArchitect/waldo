@@ -3,7 +3,12 @@ import Popup from './Popup';
 import getCoords, { keepInBounds } from '../helpers/Game';
 import wimmel from '../images/wimmel.jpg';
 
-export default function Game({ characters, foundCharacter, setTime }) {
+export default function Game({
+  characters,
+  foundCharacter,
+  setTime,
+  setTimer,
+}) {
   const [popupVisible, setPopupVisible] = useState(false);
   const [popupCoords, setPopupCoords] = useState({ x: 0, y: 0 });
   const [checkCoords, setCheckCoords] = useState({ x: 0, y: 0 });
@@ -27,10 +32,10 @@ export default function Game({ characters, foundCharacter, setTime }) {
   const handleImageLoad = () => {
     const startTime = Date.now();
 
-    setInterval(() => {
+    setTimer(setInterval(() => {
       const newTime = Date.now() - startTime;
       setTime(newTime);
-    }, 1);
+    }, 1));
   };
 
   useEffect(() => {
