@@ -39,7 +39,7 @@ export default function App() {
     setCharacters(copy);
   };
 
-  const [time, setTime] = useState('00:00:00');
+  const [time, setTime] = useState(0);
 
   return (
     <div className="container">
