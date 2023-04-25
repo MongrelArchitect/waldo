@@ -48,9 +48,13 @@ export default function App() {
         <Route path="/" element={<Home characters={characters} />} />
         <Route
           path="/play"
-          element={
-            <Game characters={characters} foundCharacter={foundCharacter} />
-          }
+          element={(
+            <Game
+              characters={characters}
+              foundCharacter={foundCharacter}
+              setTime={setTime}
+            />
+          )}
         />
       </Routes>
       <Footer />

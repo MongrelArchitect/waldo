@@ -9,13 +9,15 @@ describe('Game component', () => {
     { name: 'char three', img: '###', found: true },
   ];
 
+  const setTime = jest.fn();
+
   it('exists', () => {
-    render(<Game characters={chars} />);
+    render(<Game characters={chars} setTime={setTime} />);
     expect(screen.getByTestId('game')).toBeTruthy();
   });
 
   it('displays "wimmel" image', () => {
-    render(<Game characters={chars} />);
+    render(<Game characters={chars} setTime={setTime} />);
     expect(screen.getByAltText('Wimmelbild')).toBeTruthy();
   });
 });

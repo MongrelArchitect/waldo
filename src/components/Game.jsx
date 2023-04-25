@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Popup from './Popup';
 import getCoords, { keepInBounds } from '../helpers/Game';
 import wimmel from '../images/wimmel.jpg';
 
-export default function Game({ characters, foundCharacter }) {
+export default function Game({ characters, foundCharacter, setTime }) {
   const [popupVisible, setPopupVisible] = useState(false);
   const [popupCoords, setPopupCoords] = useState({ x: 0, y: 0 });
   const [checkCoords, setCheckCoords] = useState({ x: 0, y: 0 });
@@ -24,6 +24,19 @@ export default function Game({ characters, foundCharacter }) {
     });
   };
 
+  const handleImageLoad = () => {
+    const startTime = Date.now();
+
+    setInterval(() => {
+      const newTime = Date.now() - startTime;
+      setTime(newTime);
+    }, 1);
+  };
+
+  useEffect(() => {
+    setTime(0);
+  }, []);
+
   return (
     <div data-testid="game" className="game">
       <Popup
@@ -40,6 +53,7 @@ export default function Game({ characters, foundCharacter }) {
         alt="Wimmelbild"
         className="wimmel"
         onClick={handleClick}
+        onLoad={handleImageLoad}
       />
     </div>
   );

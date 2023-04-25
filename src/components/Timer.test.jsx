@@ -10,7 +10,7 @@ describe('Timer component', () => {
     expect(screen.getByText(/\d/)).toBeTruthy();
   });
 
-  it('displays time prop', () => {
+  it('displays properly formatted timer', () => {
     render(<Timer time={time} />);
     expect(screen.getByText(/\d/).textContent).toBe('01:04:23');
   });
