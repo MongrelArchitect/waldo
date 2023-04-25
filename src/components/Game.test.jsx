@@ -12,12 +12,28 @@ describe('Game component', () => {
   const setTime = jest.fn();
 
   it('exists', () => {
-    render(<Game characters={chars} setTime={setTime} />);
+    render(
+      <Game
+        characters={chars}
+        resetCharacters={jest.fn()}
+        setTime={setTime}
+        setTimer={jest.fn()}
+        time={0}
+      />,
+    );
     expect(screen.getByTestId('game')).toBeTruthy();
   });
 
   it('displays "wimmel" image', () => {
-    render(<Game characters={chars} setTime={setTime} />);
+    render(
+      <Game
+        characters={chars}
+        resetCharacters={jest.fn()}
+        setTime={setTime}
+        setTimer={jest.fn()}
+        time={0}
+      />,
+    );
     expect(screen.getByAltText('Wimmelbild')).toBeTruthy();
   });
 });

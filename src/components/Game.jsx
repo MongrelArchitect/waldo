@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Popup from './Popup';
+import SubmitScore from './SubmitScore';
 import getCoords, { keepInBounds } from '../helpers/Game';
+import areAllFound from '../helpers/submitScore';
 import wimmel from '../images/wimmel.jpg';
 
 export default function Game({
@@ -10,6 +12,7 @@ export default function Game({
   setTime,
   setTimer,
   timer,
+  time,
 }) {
   const [popupVisible, setPopupVisible] = useState(false);
   const [popupCoords, setPopupCoords] = useState({ x: 0, y: 0 });
@@ -49,6 +52,12 @@ export default function Game({
     resetCharacters();
   }, []);
 
+  useEffect(() => {
+    if (areAllFound(characters)) {
+      clearInterval(timer);
+    }
+  }, [characters]);
+
   return (
     <div data-testid="game" className="game">
       <Popup
@@ -58,6 +67,11 @@ export default function Game({
         foundCharacter={foundCharacter}
         setPopupVisible={setPopupVisible}
         visible={popupVisible}
+      />
+      <SubmitScore
+        characters={characters}
+        position="TBD"
+        time={time}
       />
       {/* eslint-disable-next-line */}
       <img

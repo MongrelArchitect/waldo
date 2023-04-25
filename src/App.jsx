@@ -74,6 +74,7 @@ export default function App() {
               resetCharacters={resetCharacters}
               setTime={setTime}
               setTimer={setTimer}
+              time={time}
               timer={timer}
             />
           )}
