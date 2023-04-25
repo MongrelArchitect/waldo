@@ -6,8 +6,10 @@ import wimmel from '../images/wimmel.jpg';
 export default function Game({
   characters,
   foundCharacter,
+  resetCharacters,
   setTime,
   setTimer,
+  timer,
 }) {
   const [popupVisible, setPopupVisible] = useState(false);
   const [popupCoords, setPopupCoords] = useState({ x: 0, y: 0 });
@@ -32,14 +34,19 @@ export default function Game({
   const handleImageLoad = () => {
     const startTime = Date.now();
 
-    setTimer(setInterval(() => {
-      const newTime = Date.now() - startTime;
-      setTime(newTime);
-    }, 1));
+    setTimer(
+      setInterval(() => {
+        const newTime = Date.now() - startTime;
+        setTime(newTime);
+      }, 10),
+    );
   };
 
-  useEffect(() => {
+  useEffect(() => () => {
+    clearInterval(timer);
+    setTimer(undefined);
     setTime(0);
+    resetCharacters();
   }, []);
 
   return (

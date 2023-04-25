@@ -3,12 +3,10 @@ import { NavLink } from 'react-router-dom';
 import Characters from './Characters';
 
 export default function Home({
-  characters, resetCharacters, setTime, timer,
+  characters, timer,
 }) {
   useEffect(() => {
-    setTime(0);
     clearInterval(timer);
-    resetCharacters();
   }, []);
 
   return (

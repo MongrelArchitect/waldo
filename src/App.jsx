@@ -61,8 +61,6 @@ export default function App() {
           element={(
             <Home
               characters={characters}
-              resetCharacters={resetCharacters}
-              setTime={setTime}
               timer={timer}
             />
           )}
@@ -73,8 +71,10 @@ export default function App() {
             <Game
               characters={characters}
               foundCharacter={foundCharacter}
+              resetCharacters={resetCharacters}
               setTime={setTime}
               setTimer={setTimer}
+              timer={timer}
             />
           )}
         />
