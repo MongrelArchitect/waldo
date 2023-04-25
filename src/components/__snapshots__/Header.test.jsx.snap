@@ -27,7 +27,7 @@ exports[`Header component matches snapshot 1`] = `
     <span
       class="timer"
     >
-      NaN:NaN:NaN
+      NaN:NaN.NaN
     </span>
     <span
       class="characters"

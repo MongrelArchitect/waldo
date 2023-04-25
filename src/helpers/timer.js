@@ -9,5 +9,5 @@ export default function formatTime(raw) {
   const hours = Math.floor((raw / 1000 / 60 / 60) % 60);
   return `${
     hours > 0 ? stringify(hours * 60 + minutes) : stringify(minutes)
-  }:${stringify(seconds)}:${stringify(Math.round(milliseconds / 10))}`;
+  }:${stringify(seconds)}.${stringify(Math.round(milliseconds / 10))}`;
 }

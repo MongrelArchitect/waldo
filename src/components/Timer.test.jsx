@@ -12,6 +12,6 @@ describe('Timer component', () => {
 
   it('displays properly formatted timer', () => {
     render(<Timer time={time} />);
-    expect(screen.getByText(/\d/).textContent).toBe('01:04:23');
+    expect(screen.getByText(/\d/).textContent).toBe('01:04.23');
   });
 });
