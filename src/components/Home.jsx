@@ -2,10 +2,13 @@ import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import Characters from './Characters';
 
-export default function Home({ characters, setTime, timer }) {
+export default function Home({
+  characters, resetCharacters, setTime, timer,
+}) {
   useEffect(() => {
     setTime(0);
     clearInterval(timer);
+    resetCharacters();
   }, []);
 
   return (
@@ -37,7 +40,9 @@ export default function Home({ characters, setTime, timer }) {
           <span key={character.name}>{character.name}</span>
         ))}
       </div>
-      <NavLink to="/play" className="play-link">START</NavLink>
+      <NavLink to="/play" className="play-link">
+        START
+      </NavLink>
     </div>
   );
 }

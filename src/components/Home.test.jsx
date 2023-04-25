@@ -13,7 +13,12 @@ describe('Home component', () => {
   it('matches snapshot', () => {
     const { container } = render(
       <BrowserRouter>
-        <Home characters={chars} setTime={jest.fn()} setTimer={jest.fn()} />
+        <Home
+          characters={chars}
+          resetCharacters={jest.fn()}
+          setTime={jest.fn()}
+          setTimer={jest.fn()}
+        />
       </BrowserRouter>,
     );
     expect(container).toMatchSnapshot();

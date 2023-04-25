@@ -43,15 +43,29 @@ export default function App() {
     setCharacters(copy);
   };
 
+  const resetCharacters = () => {
+    const copy = getCopy(characters);
+    copy.forEach((character) => {
+      // eslint-disable-next-line
+      character.found = false;
+    });
+    setCharacters(copy);
+  };
+
   return (
     <div className="container">
       <Header characters={characters} time={time} setTime={setTime} />
       <Routes>
         <Route
           path="/"
-          element={
-            <Home characters={characters} setTime={setTime} timer={timer} />
-          }
+          element={(
+            <Home
+              characters={characters}
+              resetCharacters={resetCharacters}
+              setTime={setTime}
+              timer={timer}
+            />
+          )}
         />
         <Route
           path="/play"
