@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Scores component matches snapshot 1`] = `
+<div>
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>
+            Rank
+          </th>
+          <th>
+            Name
+          </th>
+          <th>
+            Time
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        aria-label="table body"
+      />
+    </table>
+  </div>
+</div>
+`;

@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
 import Game from './components/Game';
+import Scores from './components/Scores';
 import Footer from './components/Footer';
 import getCopy from './helpers/app';
 import beastie from './images/beastie.jpg';
@@ -75,6 +76,14 @@ export default function App() {
               setTime={setTime}
               setTimer={setTimer}
               time={time}
+              timer={timer}
+            />
+          )}
+        />
+        <Route
+          path="/scores"
+          element={(
+            <Scores
               timer={timer}
             />
           )}

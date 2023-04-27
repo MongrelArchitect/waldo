@@ -35,9 +35,6 @@ export default function Popup({
           && checkCoords.y <= yMax
         ) {
           // Found 'em!
-          console.log('found \'em!');
-          // XXX TODO
-          // now what?
           foundCharacter(character);
         }
       }
