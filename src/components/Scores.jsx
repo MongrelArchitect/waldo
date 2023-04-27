@@ -14,7 +14,7 @@ export default function Scores({ timer }) {
       querySnapshot.forEach((doc) => {
         newScores.push({ name: doc.id, time: doc.data().time });
       });
-      setScores(newScores);
+      setScores(newScores.sort((a, b) => a.time - b.time));
     };
     setFromDatabase();
   }, []);
