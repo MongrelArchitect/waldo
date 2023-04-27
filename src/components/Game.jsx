@@ -70,7 +70,6 @@ export default function Game({
       />
       <SubmitScore
         characters={characters}
-        position="TBD"
         time={time}
       />
       {/* eslint-disable-next-line */}
