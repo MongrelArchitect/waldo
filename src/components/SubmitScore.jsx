@@ -7,6 +7,15 @@ import formatTime from '../helpers/timer';
 import areAllFound from '../helpers/submitScore';
 import db from '../helpers/firebase';
 
+async function getNames() {
+  const names = [];
+  const querySnapshot = await getDocs(collection(db, 'scores'));
+  querySnapshot.forEach((docu) => {
+    names.push(docu.id);
+  });
+  return names;
+}
+
 async function determinePosition(playerTime) {
   const scores = [];
   const querySnapshot = await getDocs(collection(db, 'scores'));
@@ -47,10 +56,32 @@ export default function SubmitScore({ time, characters }) {
     setPlayerName(event.target.value);
   };
 
+  async function checkDuplicate(name, number = 1) {
+    let tryName = name;
+    let tryNumber = number;
+    const names = await getNames();
+    if (names.includes(name)) {
+      tryNumber += 1;
+      tryName = `${playerName === '' ? 'Anon' : playerName}#${tryNumber}`;
+      return checkDuplicate(tryName, tryNumber);
+    }
+    return tryName;
+  }
+
   const submitScore = async () => {
-    await setDoc(doc(db, 'scores', playerName === '' ? 'Anon' : playerName), {
-      time,
-    });
+    await checkDuplicate();
+    await setDoc(
+      doc(
+        db,
+        'scores',
+        playerName === ''
+          ? await checkDuplicate('Anon')
+          : await checkDuplicate(playerName),
+      ),
+      {
+        time,
+      },
+    );
     navigate('/scores');
   };
 
