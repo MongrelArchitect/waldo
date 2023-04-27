@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { collection, getDocs } from 'firebase/firestore';
+import { useNavigate } from 'react-router-dom';
+import {
+  collection, doc, getDocs, setDoc,
+} from 'firebase/firestore';
 import formatTime from '../helpers/timer';
 import areAllFound from '../helpers/submitScore';
 import db from '../helpers/firebase';
@@ -7,8 +10,8 @@ import db from '../helpers/firebase';
 async function determinePosition(playerTime) {
   const scores = [];
   const querySnapshot = await getDocs(collection(db, 'scores'));
-  querySnapshot.forEach((doc) => {
-    scores.push({ name: doc.id, time: doc.data().time });
+  querySnapshot.forEach((docu) => {
+    scores.push({ name: docu.id, time: docu.data().time });
   });
   scores.sort((a, b) => a.time - b.time);
   for (let i = 0; i < scores.length; i += 1) {
@@ -19,25 +22,36 @@ async function determinePosition(playerTime) {
   return scores.length;
 }
 
-function determineSuffix(position) {
-  switch (position.toString().slice(-1)) {
-    case '1':
-      return 'st';
-    case '2':
-      return 'nd';
-    case '3':
-      return 'rd';
-    default:
-      return 'th';
+function determineSuffix(i) {
+  const j = i % 10;
+  const k = i % 100;
+  if (j === 1 && k !== 11) {
+    return 'st';
   }
+  if (j === 2 && k !== 12) {
+    return 'nd';
+  }
+  if (j === 3 && k !== 13) {
+    return 'rd';
+  }
+  return 'th';
 }
 
 export default function SubmitScore({ time, characters }) {
+  const navigate = useNavigate();
+
   const [playerName, setPlayerName] = useState('');
-  const [position, setPosition] = useState('loading...');
+  const [position, setPosition] = useState(1);
 
   const changeName = (event) => {
     setPlayerName(event.target.value);
+  };
+
+  const submitScore = async () => {
+    await setDoc(doc(db, 'scores', playerName), {
+      time,
+    });
+    navigate('/scores');
   };
 
   useEffect(() => {
@@ -70,7 +84,9 @@ export default function SubmitScore({ time, characters }) {
           value={playerName}
         />
       </label>
-      <button type="button">SUBMIT</button>
+      <button type="button" onClick={submitScore}>
+        SUBMIT
+      </button>
     </form>
   );
 }
