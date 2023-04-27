@@ -192,6 +192,37 @@ nav a.active {
   scale: 1.05;
 }
 
+.scores {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 16px;
+}
+
+.scores h2 {
+  font-size: 2rem;
+}
+
+.scores table {
+  background: #ffe;
+  border: 1px solid #333;
+  max-width: 600px;
+  width: 100%;
+}
+
+.scores thead {
+  background: #ffd3b0;
+  font-weight: bold;
+  text-align: left;
+}
+
+.scores th,
+.scores td {
+  border-bottom: 1px solid #333;
+  padding: 8px;
+}
+
 .submit-score {
   align-items: center;
   background: #ffd3b0;

@@ -2,7 +2,12 @@
 
 exports[`Scores component matches snapshot 1`] = `
 <div>
-  <div>
+  <div
+    class="scores"
+  >
+    <h2>
+      Scoreboard
+    </h2>
     <table>
       <thead>
         <tr>

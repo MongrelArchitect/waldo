@@ -20,7 +20,8 @@ export default function Scores({ timer }) {
   }, []);
 
   return (
-    <div>
+    <div className="scores">
+      <h2>Scoreboard</h2>
       <table>
         <thead>
           <tr>
