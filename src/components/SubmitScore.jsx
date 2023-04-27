@@ -48,7 +48,7 @@ export default function SubmitScore({ time, characters }) {
   };
 
   const submitScore = async () => {
-    await setDoc(doc(db, 'scores', playerName), {
+    await setDoc(doc(db, 'scores', playerName === '' ? 'Anon' : playerName), {
       time,
     });
     navigate('/scores');
