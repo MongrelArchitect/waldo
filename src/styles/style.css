@@ -16,9 +16,11 @@ body {
 
 footer {
   align-items: center;
+  box-shadow: 0 -1px 4px #555;
   flex-direction: column;
   font-size: 0.8rem;
   padding: 8px;
+  z-index: 9;
 }
 
 footer a {
@@ -32,10 +34,14 @@ header {
 
 header {
   align-items: center;
+  box-shadow: 0 1px 4px #555;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 8px;
+  position: sticky;
+  top: 0;
   width: 100%;
+  z-index: 9;
 }
 
 nav,
@@ -78,7 +84,7 @@ nav a.active {
 .container {
   display: grid;
   grid-template-rows: auto 1fr auto;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 .game {
@@ -155,12 +161,12 @@ nav a.active {
 
 .popup {
   background: rgba(255, 249, 222, 0.9);
-  border: 4px solid #333;
   border-radius: 10%;
+  box-shadow: 0 0 4px 1px #222;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding: 8px;
+  padding: 12px;
   position: absolute;
   user-select: none;
 }
@@ -226,8 +232,8 @@ nav a.active {
 .submit-score {
   align-items: center;
   background: #ffd3b0;
-  border: 4px solid #333;
   border-radius: 16px;
+  box-shadow: 0 0 4px 2px #222;
   display: flex;
   flex-direction: column;
   gap: 16px;

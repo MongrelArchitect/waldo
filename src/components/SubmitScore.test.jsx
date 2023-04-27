@@ -1,16 +1,25 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import SubmitScore from './SubmitScore';
 
 describe('SubmitScore component', () => {
   it('exists', () => {
-    render(<SubmitScore time={0} characters={[]} />);
+    render(
+      <BrowserRouter>
+        <SubmitScore time={64227} characters={[]} />
+      </BrowserRouter>,
+    );
     expect(screen.getByRole('form')).toBeTruthy();
   });
 
   it("displays user's final time score", () => {
-    render(<SubmitScore time={64227} characters={[]} />);
+    render(
+      <BrowserRouter>
+        <SubmitScore time={64227} characters={[]} />
+      </BrowserRouter>,
+    );
     expect(screen.getByRole('heading', { level: 2 }).textContent).toBe(
       'FINAL SCORE',
     );
@@ -18,19 +27,31 @@ describe('SubmitScore component', () => {
   });
 
   it("displays user's position on scoreboard", () => {
-    render(<SubmitScore time={0} position="1st" characters={[]} />);
+    render(
+      <BrowserRouter>
+        <SubmitScore time={64227} characters={[]} />
+      </BrowserRouter>,
+    );
     expect(screen.getByText(/You scored/).textContent).toBe(
       'You scored 1st place!',
     );
   });
 
   it('prompts user for their name', () => {
-    render(<SubmitScore time={0} position="1st" characters={[]} />);
+    render(
+      <BrowserRouter>
+        <SubmitScore time={64227} characters={[]} />
+      </BrowserRouter>,
+    );
     expect(screen.getByRole('textbox')).toBeTruthy();
   });
 
   it('prompts user for their name', () => {
-    render(<SubmitScore time={0} position="1st" characters={[]} />);
+    render(
+      <BrowserRouter>
+        <SubmitScore time={64227} characters={[]} />
+      </BrowserRouter>,
+    );
     expect(screen.getByRole('textbox')).toBeTruthy();
   });
 
@@ -39,7 +60,11 @@ describe('SubmitScore component', () => {
       { name: 'char one', img: '#', found: false },
       { name: 'char two', img: '##', found: true },
     ];
-    render(<SubmitScore characters={chars} />);
+    render(
+      <BrowserRouter>
+        <SubmitScore time={64227} characters={chars} />
+      </BrowserRouter>,
+    );
     expect(screen.getByRole('form')).toHaveClass('submit-score hidden');
   });
 
@@ -48,7 +73,11 @@ describe('SubmitScore component', () => {
       { name: 'char one', img: '#', found: true },
       { name: 'char two', img: '##', found: true },
     ];
-    render(<SubmitScore characters={chars} />);
+    render(
+      <BrowserRouter>
+        <SubmitScore time={64227} characters={chars} />
+      </BrowserRouter>,
+    );
     expect(screen.getByRole('form')).toHaveClass('submit-score visible');
   });
 });

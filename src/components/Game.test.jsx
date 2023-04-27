@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
 import Game from './Game';
 
@@ -13,26 +14,30 @@ describe('Game component', () => {
 
   it('exists', () => {
     render(
-      <Game
-        characters={chars}
-        resetCharacters={jest.fn()}
-        setTime={setTime}
-        setTimer={jest.fn()}
-        time={0}
-      />,
+      <BrowserRouter>
+        <Game
+          characters={chars}
+          resetCharacters={jest.fn()}
+          setTime={setTime}
+          setTimer={jest.fn()}
+          time={0}
+        />
+      </BrowserRouter>,
     );
     expect(screen.getByTestId('game')).toBeTruthy();
   });
 
   it('displays "wimmel" image', () => {
     render(
-      <Game
-        characters={chars}
-        resetCharacters={jest.fn()}
-        setTime={setTime}
-        setTimer={jest.fn()}
-        time={0}
-      />,
+      <BrowserRouter>
+        <Game
+          characters={chars}
+          resetCharacters={jest.fn()}
+          setTime={setTime}
+          setTimer={jest.fn()}
+          time={0}
+        />
+      </BrowserRouter>
     );
     expect(screen.getByAltText('Wimmelbild')).toBeTruthy();
   });
