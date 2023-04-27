@@ -4,6 +4,7 @@ import SubmitScore from './SubmitScore';
 import getCoords, { keepInBounds } from '../helpers/Game';
 import areAllFound from '../helpers/submitScore';
 import wimmel from '../images/wimmel.jpg';
+import cursor from '../images/cursor.png';
 
 export default function Game({
   characters,
@@ -79,6 +80,7 @@ export default function Game({
         className="wimmel"
         onClick={handleClick}
         onLoad={handleImageLoad}
+        style={{ cursor: `url(${cursor}) 16 16, auto` }}
       />
     </div>
   );
