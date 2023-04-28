@@ -10,6 +10,8 @@ export default function Game({
   characters,
   foundCharacter,
   resetCharacters,
+  setFound,
+  setMessageVisible,
   setTime,
   setTimer,
   timer,
@@ -66,6 +68,8 @@ export default function Game({
         checkCoords={checkCoords}
         coords={popupCoords}
         foundCharacter={foundCharacter}
+        setFound={setFound}
+        setMessageVisible={setMessageVisible}
         setPopupVisible={setPopupVisible}
         visible={popupVisible}
       />

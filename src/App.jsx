@@ -33,6 +33,10 @@ export default function App() {
 
   const [timer, setTimer] = useState(undefined);
 
+  const [messageVisible, setMessageVisible] = useState(false);
+
+  const [found, setFound] = useState(false);
+
   const foundCharacter = (characterName) => {
     const copy = getCopy(characters);
     copy.forEach((character) => {
@@ -41,6 +45,7 @@ export default function App() {
         character.found = true;
       }
     });
+    setFound(true);
     setCharacters(copy);
   };
 
@@ -55,16 +60,17 @@ export default function App() {
 
   return (
     <div className="container">
-      <Header characters={characters} time={time} setTime={setTime} />
+      <Header
+        characters={characters}
+        found={found}
+        messageVisible={messageVisible}
+        setTime={setTime}
+        time={time}
+      />
       <Routes>
         <Route
           path="/"
-          element={(
-            <Home
-              characters={characters}
-              timer={timer}
-            />
-          )}
+          element={<Home characters={characters} timer={timer} />}
         />
         <Route
           path="/play"
@@ -73,6 +79,8 @@ export default function App() {
               characters={characters}
               foundCharacter={foundCharacter}
               resetCharacters={resetCharacters}
+              setFound={setFound}
+              setMessageVisible={setMessageVisible}
               setTime={setTime}
               setTimer={setTimer}
               time={time}
@@ -80,14 +88,7 @@ export default function App() {
             />
           )}
         />
-        <Route
-          path="/scores"
-          element={(
-            <Scores
-              timer={timer}
-            />
-          )}
-        />
+        <Route path="/scores" element={<Scores timer={timer} />} />
       </Routes>
       <Footer />
     </div>

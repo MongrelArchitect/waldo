@@ -7,6 +7,8 @@ export default function Popup({
   checkCoords,
   coords,
   foundCharacter,
+  setFound,
+  setMessageVisible,
   setPopupVisible,
   visible,
 }) {
@@ -36,9 +38,15 @@ export default function Popup({
         ) {
           // Found 'em!
           foundCharacter(character);
+        } else {
+          setFound(false);
         }
       }
     });
+    setMessageVisible(true);
+    setTimeout(() => {
+      setMessageVisible(false);
+    }, 2000);
     setPopupVisible();
   };
 

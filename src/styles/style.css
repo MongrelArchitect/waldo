@@ -159,9 +159,43 @@ nav a.active {
   scale: 1.05;
 }
 
+.message {
+  border-left: 2px solid #333;
+  border-right: 2px solid #333;
+  height: 100%;
+  position: absolute;
+  transition: top 500ms ease-in-out;
+  top: -400px;
+  width: 200px;
+}
+
+.message.hidden {
+  top: -300px;
+}
+
+.message.visible {
+  top: 0;
+}
+
+.message-text {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
+
+.message-text.found {
+  background: #7d7;
+}
+
+.message-text.not-found {
+  background: #ff6969;
+}
+
 .popup {
   background: rgba(255, 249, 222, 0.9);
-  border-radius: 10%;
+  border-radius: 20px;
   box-shadow: 0 0 4px 1px #222;
   display: flex;
   flex-direction: column;
