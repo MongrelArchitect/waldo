@@ -52,6 +52,7 @@ export default function Game({
     clearInterval(timer);
     setTimer(undefined);
     setTime(0);
+    setFound(false);
     resetCharacters();
   }, []);
 

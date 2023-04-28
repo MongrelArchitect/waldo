@@ -18,6 +18,7 @@ describe('Game component', () => {
         <Game
           characters={chars}
           resetCharacters={jest.fn()}
+          setFound={jest.fn()}
           setTime={setTime}
           setTimer={jest.fn()}
           time={0}
@@ -33,11 +34,12 @@ describe('Game component', () => {
         <Game
           characters={chars}
           resetCharacters={jest.fn()}
+          setFound={jest.fn()}
           setTime={setTime}
           setTimer={jest.fn()}
           time={0}
         />
-      </BrowserRouter>
+      </BrowserRouter>,
     );
     expect(screen.getByAltText('Wimmelbild')).toBeTruthy();
   });

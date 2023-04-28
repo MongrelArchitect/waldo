@@ -24,6 +24,15 @@ exports[`Header component matches snapshot 1`] = `
         Scoreboard
       </a>
     </nav>
+    <div
+      class="message hidden"
+    >
+      <span
+        class="message-text not-found"
+      >
+        Sorry, try again.
+      </span>
+    </div>
     <span
       class="timer"
     >
